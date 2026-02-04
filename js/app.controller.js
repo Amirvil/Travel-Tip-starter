@@ -18,6 +18,8 @@ window.app = {
     onSetFilterBy,
 }
 
+console.log('hi')
+
 function onInit() {
     getFilterByFromQueryParams()
     loadAndRenderLocs()
@@ -224,11 +226,11 @@ function onRemoveLoc(locId) {
         }, 3000)
     }
 
-    function getFilterByFromQueryParams() {
-        const queryParams = new URLSearchParams(window.location.search)
-        const txt = queryParams.get('txt') || ''
-        const minRate = queryParams.get('minRate') || 0
-        locService.setFilterBy({ txt, minRate })
+function getFilterByFromQueryParams() {
+    const queryParams = new URLSearchParams(window.location.search)
+    const txt = queryParams.get('txt') || ''
+    const minRate = queryParams.get('minRate') || 0
+    locService.setFilterBy({ txt, minRate })
 
         document.querySelector('input[name="filter-by-txt"]').value = txt
         document.querySelector('input[name="filter-by-rate"]').value = minRate
