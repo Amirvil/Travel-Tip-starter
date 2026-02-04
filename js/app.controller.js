@@ -18,6 +18,8 @@ window.app = {
     onSetFilterBy,
 }
 
+console.log('omer:',  )
+
 function onInit() {
     getFilterByFromQueryParams()
     loadAndRenderLocs()
